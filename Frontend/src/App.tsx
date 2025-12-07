@@ -16,7 +16,6 @@ function App() {
     <Router>
         <Toaster position="top-center" reverseOrder={false} />
       <Routes>
-        {/* Default route redirects to Signup */}
         <Route path="/" element={<Navigate to="/signup" replace />} />
         
         <Route path="/signup" element={<SignUp />} />

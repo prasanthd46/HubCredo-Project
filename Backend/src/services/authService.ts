@@ -1,6 +1,5 @@
 import bcrypt from 'bcryptjs';
-import prisma from '../config/db'; // Note the .js extension if using "type": "module" in package.json, otherwise remove it based on tsconfig.
-import { hash } from 'crypto';
+import prisma from '../config/db'; 
 
 export const registerUser = async (email: string, password: string) => {
   const existingUser = await prisma.user.findUnique({
