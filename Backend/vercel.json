@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "functions": {
-    "api/auth.ts": {
-      "runtime": "nodejs20.x"
+  "builds": [
+    {
+      "src": "api/auth.ts",
+      "use": "@vercel/node"
     }
-  },
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/auth.ts" }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/auth"
+    }
   ]
 }
