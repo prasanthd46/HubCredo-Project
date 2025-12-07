@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes';
 import cookieParser from 'cookie-parser';
+import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -18,7 +19,4 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRoutes);
 
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default app;
